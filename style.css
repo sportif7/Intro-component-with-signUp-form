@@ -1,0 +1,253 @@
+@font-face {
+    font-family: "Poppins";
+    font-optical-sizing: auto; 
+    font-weight: 400;
+    font-style: normal;
+    src:url("./fonts/Poppins-Regular.ttf")
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    src:url("./fonts/Poppins-Medium.ttf")
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    src:url("./fonts/Poppins-SemiBold.ttf")
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-optical-sizing: auto;    
+    font-weight: 700;
+    font-style: normal;
+    src:url("./fonts/Poppins-Bold.ttf")
+}
+
+:root{
+     
+    /* ---- Primary ---- */
+    --clr-red:hsl(0, 100%, 74%);
+    --clr-green:hsl(154, 59%, 51%);
+
+    /* ---- Accent ---- */
+    --clr-blue:hsl(248, 32%, 49%);
+
+    /* ---- Neutral ---- */
+
+    --clr-dark-blue:hsl(249, 10%, 26%);
+    --clr-grayish-blue:hsl(246, 25%, 77%);
+    --clr-white:hsl(0, 100%, 100%);
+}
+
+body{
+     position:relative;
+     min-height:100vh;
+     max-width:100%;
+     font-family: "Poppins", sans-serif;
+     display:flex;
+     flex-direction:column;
+     justify-content:center;
+     align-items:center;
+     background-color:var(--clr-red);
+     background-image:url("./images/bg-intro-mobile.png");
+     padding-block:5.7rem;
+}
+
+
+.headline-section{
+    color:var(--clr-white);
+    width:87%;
+    max-width:500px;
+    text-align:center;
+}
+
+.headline-section h1{
+   font-size:clamp(1.75rem, 6vw, 50px);
+   line-height:1.4;
+}
+
+.headline-section p{
+   padding-top:1rem;
+   padding-bottom:3.85rem;
+   line-height:1.65; 
+   font-size:1rem;
+   font-weight:500;
+}
+
+.form-section{
+     width:87%;
+     max-width:500px; 
+}
+
+.price-button{
+     padding:1rem 3.5rem;
+     width:100%;
+     background-color:var(--clr-blue);
+     color:var(--clr-white);
+     border:none;
+     border-radius:0.625rem;
+     line-height:1.7;
+     margin-bottom:1.5rem;
+     box-shadow:0 9px hsla(0, 0%, 0%, 0.15);
+     cursor:pointer;
+}
+
+.price-button:is(:hover){
+     background-color:hsl(248, 32%, 59%);
+}
+
+.price-button span{
+     font-weight:700;
+}
+
+.form-wrapper{
+     background-color:var(--clr-white);
+     padding:clamp(1.5rem, 3vw, 2.25rem);
+     border-radius:0.625rem;
+     box-shadow:0 9px hsla(0, 0%, 0%, 0.15);
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:1.25rem;
+}
+
+form input{
+     width:100%;
+     padding:0.85rem 1.25rem;
+     border:1px solid hsla(246, 25%, 77%, 0.5);
+     border-radius:0.312rem;
+}
+
+input:focus{
+     outline:0;
+     border:0;
+     border:1px solid var(--clr-blue);
+}
+
+::placeholder{
+     font-weight:600;
+     font-size:0.935rem;
+     color:hsla(249, 10%, 26%, 0.75);
+}
+
+.input-control{
+     position:relative;
+}
+
+.icon-error{
+     visibility:hidden;
+     position:absolute;
+     right:7%;
+     bottom: 47%;
+}
+
+.message-error{
+     visibility:hidden;
+     position:absolute;  
+     text-align:right;
+     right:0; 
+     top:3rem;
+     color:var(--clr-red);
+     font-style:italic;
+     font-size:11px;
+}
+
+.input-control.error .icon-error{
+      visibility:visible;
+}
+
+.input-control.error .message-error{
+     visibility:visible;
+}
+
+.input-control.error input{
+     border-color:var(--clr-red);
+     border-width:2px;
+}
+
+.input-control.success input{
+     border-color:var(--clr-blue);
+     border-width: 2px;
+}
+
+
+.claim-button{
+     padding:0.85rem 1.25rem;
+     background-color: var(--clr-green);
+     color:var(--clr-white);
+     font-weight:500;
+     border:none;
+     border-radius:0.312rem;
+     text-transform:uppercase;
+     box-shadow:0 5px hsl(154, 59%, 47%);
+}
+
+.claim-button:where(:hover){
+     background-color:hsl(154, 59%, 67%);
+     cursor:pointer;
+}
+
+small{ 
+     display:block;
+     width:89%;
+     text-align:center;
+     margin-inline:auto; 
+     padding-top:1.2rem;
+     font-size:0.687rem;
+     color:var(--clr-grayish-blue);
+}
+
+small span{
+     color:var(--clr-red);
+     font-weight:700;
+}
+
+footer{ 
+     position:absolute;
+     left:50%;
+     transform:translateX(-50%);
+     bottom:2%;
+     font-size:10px;
+     text-align:center;
+}
+
+
+@media (width > 48rem){
+     body{
+          background-image:url("./images/bg-intro-desktop.png");
+          min-width:100%;
+          flex-direction:row;
+          gap:4rem;
+          padding-inline:clamp(4rem, 10vw, 7.75rem);
+     } 
+
+     .headline-section{
+          text-align:left;
+     }
+
+     .headline-section h1{
+          line-height:1.1;
+     }
+
+     .headline-section p{
+          padding:0;
+          padding-top:2rem;
+     }
+
+     small{
+         font-size:0.657rem;
+     }
+
+}
+
+
+
